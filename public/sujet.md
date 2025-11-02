@@ -51,8 +51,6 @@ npm --version
 
 ## Partie 1 : Initialisation du projet
 
-> **Durée estimée** : 5 minutes
-
 Next.js est un framework React qui facilite la création d'applications web modernes et performantes. Il inclut par défaut des fonctionnalités comme le rendu côté serveur (SSR), la génération de sites statiques (SSG) et un système de routage simple.
 
 Nous allons créer un mini-site de présentation de produits pour découvrir Next.js.

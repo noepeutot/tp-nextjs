@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import 'highlight.js/styles/github.css';
+import 'highlight.js/styles/github-dark.css';
 
 export default function Home() {
   const [markdown, setMarkdown] = useState('');
@@ -23,20 +23,20 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-900">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-gray-800 mb-4"></div>
-          <div className="text-xl text-gray-700">Chargement du sujet...</div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-400 mb-4"></div>
+          <div className="text-xl text-gray-300">Chargement du sujet...</div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gray-900 py-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Contenu principal */}
-        <article className="bg-white rounded shadow-sm border border-gray-200 overflow-hidden">
+        <article className="bg-gray-800 rounded shadow-lg border border-gray-700 overflow-hidden">
           <div className="px-8 py-8 md:px-12 md:py-10">
             <div className="prose prose-slate max-w-none">
               <ReactMarkdown
@@ -46,25 +46,25 @@ export default function Home() {
                   // Titres avec style Markdown classique
                   h1: ({node, ...props}) => (
                     <h1 
-                      className="text-3xl font-bold text-gray-900 mt-0 mb-6 pb-3 border-b border-gray-200" 
+                      className="text-3xl font-bold text-gray-100 mt-0 mb-6 pb-3 border-b border-gray-600" 
                       {...props} 
                     />
                   ),
                   h2: ({node, ...props}) => (
                     <h2 
-                      className="text-2xl font-bold text-gray-900 mt-10 mb-4 pb-2 border-b border-gray-200" 
+                      className="text-2xl font-bold text-gray-100 mt-10 mb-4 pb-2 border-b border-gray-600" 
                       {...props} 
                     />
                   ),
                   h3: ({node, ...props}) => (
                     <h3 
-                      className="text-xl font-semibold text-gray-900 mt-8 mb-3" 
+                      className="text-xl font-semibold text-gray-100 mt-8 mb-3" 
                       {...props} 
                     />
                   ),
                   h4: ({node, ...props}) => (
                     <h4 
-                      className="text-lg font-semibold text-gray-900 mt-6 mb-2" 
+                      className="text-lg font-semibold text-gray-100 mt-6 mb-2" 
                       {...props} 
                     />
                   ),
@@ -72,7 +72,7 @@ export default function Home() {
                   // Paragraphes
                   p: ({node, ...props}) => (
                     <p 
-                      className="text-base text-gray-700 leading-7 mb-4" 
+                      className="text-base text-gray-300 leading-7 mb-4" 
                       {...props} 
                     />
                   ),
@@ -80,7 +80,7 @@ export default function Home() {
                   // Liens
                   a: ({node, ...props}) => (
                     <a 
-                      className="text-blue-600 hover:underline" 
+                      className="text-blue-400 hover:text-blue-300 hover:underline" 
                       target="_blank"
                       rel="noopener noreferrer"
                       {...props} 
@@ -102,7 +102,7 @@ export default function Home() {
                   ),
                   li: ({node, ...props}) => (
                     <li 
-                      className="text-gray-700 leading-7" 
+                      className="text-gray-300 leading-7" 
                       {...props} 
                     />
                   ),
@@ -112,7 +112,7 @@ export default function Home() {
                     const match = /language-(\w+)/.exec(className || '');
                     return inline ? (
                       <code 
-                        className="bg-gray-100 text-red-600 px-1.5 py-0.5 rounded text-sm font-mono" 
+                        className="bg-gray-700 text-pink-400 px-1.5 py-0.5 rounded text-sm font-mono" 
                         {...props}
                       >
                         {children}
@@ -128,7 +128,7 @@ export default function Home() {
                   },
                   pre: ({node, ...props}) => (
                     <pre 
-                      className="bg-gray-50 border border-gray-200 rounded p-4 overflow-x-auto mb-4 text-sm" 
+                      className="bg-gray-900 border border-gray-600 rounded p-4 overflow-x-auto mb-4 text-sm" 
                       {...props} 
                     />
                   ),
@@ -136,7 +136,7 @@ export default function Home() {
                   // Citations
                   blockquote: ({node, ...props}) => (
                     <blockquote 
-                      className="border-l-4 border-gray-300 pl-4 py-2 my-4 italic text-gray-700 bg-gray-50" 
+                      className="border-l-4 border-blue-500 pl-4 py-2 my-4 italic text-gray-300 bg-gray-700" 
                       {...props} 
                     />
                   ),
@@ -145,26 +145,26 @@ export default function Home() {
                   table: ({node, ...props}) => (
                     <div className="overflow-x-auto my-6">
                       <table 
-                        className="min-w-full border-collapse border border-gray-300" 
+                        className="min-w-full border-collapse border border-gray-600" 
                         {...props} 
                       />
                     </div>
                   ),
                   thead: ({node, ...props}) => (
                     <thead 
-                      className="bg-gray-100" 
+                      className="bg-gray-700" 
                       {...props} 
                     />
                   ),
                   th: ({node, ...props}) => (
                     <th 
-                      className="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-900" 
+                      className="border border-gray-600 px-4 py-2 text-left font-semibold text-gray-100" 
                       {...props} 
                     />
                   ),
                   td: ({node, ...props}) => (
                     <td 
-                      className="border border-gray-300 px-4 py-2 text-gray-700" 
+                      className="border border-gray-600 px-4 py-2 text-gray-300" 
                       {...props} 
                     />
                   ),
@@ -172,7 +172,7 @@ export default function Home() {
                   // Ligne horizontale
                   hr: ({node, ...props}) => (
                     <hr 
-                      className="my-8 border-t border-gray-300" 
+                      className="my-8 border-t border-gray-600" 
                       {...props} 
                     />
                   ),
@@ -180,13 +180,13 @@ export default function Home() {
                   // Texte en gras et italique
                   strong: ({node, ...props}) => (
                     <strong 
-                      className="font-semibold text-gray-900" 
+                      className="font-semibold text-gray-100" 
                       {...props} 
                     />
                   ),
                   em: ({node, ...props}) => (
                     <em 
-                      className="italic" 
+                      className="italic text-gray-300" 
                       {...props} 
                     />
                   ),
