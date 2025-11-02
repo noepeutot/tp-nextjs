@@ -1,40 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Installation et Configuration
 
-## Getting Started
+## 📦 Étape 1 : Installation des dépendances
 
-First, run the development server:
+Avant de démarrer le serveur de développement, vous devez installer les packages nécessaires pour afficher le sujet en Markdown :
+
+```bash
+cd tp-nextjs
+npm install react-markdown remark-gfm rehype-highlight highlight.js
+```
+
+### Packages installés :
+- **react-markdown** : Pour convertir le Markdown en composants React
+- **remark-gfm** : Pour supporter les tableaux et autres extensions GitHub Flavored Markdown
+- **rehype-highlight** : Pour la coloration syntaxique du code
+- **highlight.js** : Bibliothèque de coloration syntaxique
+
+## 🚀 Étape 2 : Démarrer le serveur de développement
+
+Une fois les dépendances installées, lancez le serveur :
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le site sera accessible à l'adresse : [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 📄 Pages disponibles
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. **Page d'accueil** : [http://localhost:3000](http://localhost:3000)
+   - Page d'accueil avec un lien vers le sujet du TP
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+2. **Page du sujet** : [http://localhost:3000/sujet](http://localhost:3000/sujet)
+   - Affiche le contenu complet du fichier `sujet.md` avec un rendu élégant
+   - Inclut la coloration syntaxique pour les blocs de code
+   - Support des tableaux et autres éléments Markdown
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Fonctionnalités
 
-## Learn More
+- ✅ Rendu Markdown avec styles personnalisés
+- ✅ Coloration syntaxique des blocs de code
+- ✅ Support des tableaux (GitHub Flavored Markdown)
+- ✅ Design responsive et moderne
+- ✅ Navigation facile entre les pages
+- ✅ Animations de chargement
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Personnalisation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+Si vous souhaitez personnaliser l'apparence du sujet, vous pouvez modifier :
+- `styles/markdown.css` : Styles CSS pour le contenu Markdown
+- `pages/sujet.tsx` : Composant React de la page du sujet
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Modifier le contenu du sujet
 
-## Deploy on Vercel
+Le contenu du sujet provient du fichier `public/sujet.md`. Pour le modifier :
+1. Éditez le fichier source `sujet.md` à la racine du projet
+2. Recopiez-le dans `public/sujet.md`
+3. Le site se rechargera automatiquement et affichera les modifications
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔧 Commandes utiles
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+```bash
+# Démarrer en mode développement
+npm run dev
+
+# Construire pour la production
+npm run build
+
+# Démarrer en mode production
+npm start
+
+# Vérifier les erreurs de linting
+npm run lint
+```
+
+## 🐛 Dépannage
+
+Si vous rencontrez des erreurs :
+
+1. **Erreur "Cannot find module 'react-markdown'"** :
+   - Assurez-vous d'avoir exécuté `npm install`
+
+2. **Le sujet ne s'affiche pas** :
+   - Vérifiez que le fichier `public/sujet.md` existe
+   - Regardez la console du navigateur (F12) pour voir les erreurs
+
+3. **Les styles ne s'appliquent pas** :
+   - Effacez le cache du navigateur (Ctrl+Shift+R)
+   - Redémarrez le serveur de développement
+
+## 📚 Ressources
+
+- [Documentation Next.js](https://nextjs.org/docs)
+- [Documentation React Markdown](https://github.com/remarkjs/react-markdown)
+- [Documentation Tailwind CSS](https://tailwindcss.com/docs)
+
